@@ -1,87 +1,62 @@
-Restic
-=======
+<p><img src="https://restic.readthedocs.io/en/stable/_static/logo.png" alt="restic logo" title="restic" align="right" height="60" /></p>
 
-Deploys restic binary and cron jobs to trigger restic commands
+# Ansible Role: restic
 
-Requirements
-------------
+[![Build Status](https://travis-ci.org/paulfantom/ansible-restic.svg?branch=master)](https://travis-ci.org/paulfantom/ansible-restic)
+[![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![Ansible Role](https://img.shields.io/badge/ansible%20role-paulfantom.node_exporter-blue.svg)](https://galaxy.ansible.com/paulfantom/restic/)
+[![GitHub tag](https://img.shields.io/github/tag/paulfantom/ansible-restic.svg)](https://github.com/paulfantom/ansible-restic/tags)
 
-None
+## Description
 
-Role Variables
---------------
+Deploy [restic](https://restic.net/) - fast, secure, efficient backup program.
 
+## Requirements
+
+- Ansible > 2.2
+- bzip2 installed on deployer machine (same one where ansible is installed)
+
+## Role Variables
+
+All variables which can be overridden are stored in [defaults/main.yml](defaults/main.yml) file as well as in table below.
+
+| Name           | Default Value | Description                        |
+| -------------- | ------------- | -----------------------------------|
+| `restic_version` | 0.8.1 | restic package version |
+| `restic_install_path` | "/usr/local/bin" | directory where restic binary will be installed |
+| `restic_password_path` | "/var/lib/restic" | directory where restic will hold password files |
+| `restic_repos` | [] | restic repositories and cron jobs configuration. More in [defaults/main.yml](defaults/main.yml) |
+
+## Example
+
+### Playbook
+
+Use it in a playbook as follows:
 ```yaml
-restic_install_path: '/usr/local/bin'
-restic_password_path: '/var/lib/restic'
-restic_version: '0.8.0'
-
-restic_repos:
-  - name: example
-    url: '/backup'
-    password: 'foo'
-    aws_access_key_id: 'ACCESS_KEY'
-    aws_secret_access_key: 'SECRET_KEY'
+- hosts: all
+  become: yes
+  roles:
+    - paulfantom.restic
 ```
 
-Example configuration
----------------------
+## Local Testing
 
-```yaml
-# format:
-# at: 'h m  dom mon dow'
-# type: < 'db_mysql' | 'db_pgsql' >
-restic_jobs:
-  - at: '0 6  * * *'
-    type: 'db_mysql'
-    arg: 'blog'
-  - at: '0 8  * * *'
-    type: 'db_pgsql'
-    arg: 'users'
-    tags:
-      - postgres
-      - database
-restic_jobs_raw:
-  - command: 'restic backup /var'
-    at: '0 4  * * *'
-  - command: 'restic backup /home'
-    at: '0 3  * * *'
-    user: 'restic'
+The preferred way of locally testing the role is to use Docker and [molecule](https://github.com/metacloud/molecule) (v1.25). You will have to install Docker on your system. See Get started for a Docker package suitable to for your system.
+All packages you need to can be specified in one line:
+```sh
+pip install ansible ansible-lint>=3.4.15 molecule==1.25.0 docker testinfra>=1.7.0
 ```
-
-Which produces `/etc/cron.d/restic-example` file with the following content:
-
+This should be similiar to one listed in `.travis.yml` file in `install` section. 
+After installing test suit you can run test by running
+```sh
+molecule test
 ```
-# restic backup jobs
-# vi: ft=jinja.crontab
+For more information about molecule go to their [docs](http://molecule.readthedocs.io/en/stable-1.25/).
 
-SHELL=/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-AWS_ACCESS_KEY_ID="ACCESS_KEY"
-AWS_SECRET_ACCESS_KEY="SECRET_KEY"
-RESTIC_REPOSITORY="/backup"
-RESTIC_PASSWORD_FILE="/var/lib/restic/passwd_example"
+## Contributing
 
-0 6  * * *  root   mysqldump --routines --add-drop-table --default-character-set=utf8 blog | restic backup --stdin --stdin-filename db_mysql_blog.sql
-0 8  * * *  root   su -c '/usr/bin/pg_dump --encoding=UTF8 "users"' postgres  | restic backup --stdin --stdin-filename db_pgsql_users.sql --tag postgres --tag database
+See [contributor guideline](CONTRIBUTING.md).
 
-0 4  * * *  root  restic backup /var
-0 3  * * *  backup  restic backup /home
-```
+## License
 
-
-Dependencies
-------------
-
-None
-
-
-Usage
------
-
-Please, see `tests/test.yml` for an example
-
-License
--------
-
-BSD
+This project is licensed under MIT License. See [LICENSE](/LICENSE) for more details.
