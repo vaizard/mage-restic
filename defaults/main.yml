@@ -15,6 +15,16 @@ restic_repos: []
 #   jobs:
 #     - command: 'restic backup /srv'
 #       at: '0 1  * * *'
+#   retention_time: '17 5 * * *'
+#   retention:
+#     last: 2
+#     hourly: 4
+#     daily: 10
+#     weekly: 9
+#     monthly: 3
+#     yearly: 10
+#     tags:
+#       - special
 # - name: backblaze-example
 #   url: "b2:bucketname:path/to/repo"
 #   password: "correcthorsebatterystaple"
