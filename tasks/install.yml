@@ -15,14 +15,6 @@
   delegate_to: localhost
   run_once: true
 
-- name: Propagate restic binary
-  copy:
-    src: /tmp/restic
-    dest: '{{ restic_install_path }}/restic'
-    mode: '0755'
-    owner: 'root'
-    group: 'root'
-
 - name: Ensure restic directories exist
   file:
     state: 'directory'
@@ -31,6 +23,15 @@
     owner: 'root'
     group: 'root'
   with_items:
+    - '{{ restic_install_path }}'
     - '/var/lib/restic'
     - '/var/log/restic'
     - '/etc/cron.d'
+
+- name: Propagate restic binary
+  copy:
+    src: /tmp/restic
+    dest: '{{ restic_install_path }}/restic'
+    mode: '0755'
+    owner: 'root'
+    group: 'root'
