@@ -1,4 +1,15 @@
 ---
+- name: Ensure restic directories exist
+  file:
+    state: 'directory'
+    path: '{{ item }}'
+    mode: '0750'
+    owner: 'root'
+    group: 'root'
+  with_items:
+    - '{{ restic_install_path }}'
+    - '/var/log/restic'
+
 - name: Download client binary
   become: no
   get_url:
@@ -15,22 +26,10 @@
   delegate_to: localhost
   run_once: true
 
-- name: Ensure restic directories exist
-  file:
-    state: 'directory'
-    path: '{{ item }}'
-    mode: '0755'
-    owner: 'root'
-    group: 'root'
-  with_items:
-    - '{{ restic_install_path }}'
-    - '/var/log/restic'
-    - '/etc/cron.d'
-
 - name: Propagate restic binary
   copy:
     src: /tmp/restic
     dest: '{{ restic_install_path }}/restic'
-    mode: '0755'
+    mode: '0750'
     owner: 'root'
     group: 'root'
