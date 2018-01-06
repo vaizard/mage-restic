@@ -14,16 +14,13 @@
     state: present
   when: restic_user != 'root'
 
-- name: Ensure restic directories exist
+- name: Ensure restic installation directory exist
   file:
     state: 'directory'
-    path: '{{ item }}'
+    path: '{{ restic_install_path }}'
     mode: '0750'
-    owner: 'root'
-    group: 'root'
-  with_items:
-    - '{{ restic_install_path }}'
-    - '/var/log/restic'
+    owner: "root"
+    group: "root"
 
 - name: Download client binary
   become: no

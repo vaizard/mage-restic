@@ -22,9 +22,9 @@ def test_cronfiles(host):
         assert f.mode == 0o640
         with host.sudo():
             assert f.contains('RESTIC_PASSWORD="correcthorsebatterystaple"')
-
-
-def test_logdir(host):
-    logdir = host.file("/var/log/restic")
-    assert logdir.is_directory
-    assert logdir.exists
+#
+#
+# def test_logdir(host):
+#     logdir = host.file("/var/log/restic")
+#     assert logdir.is_directory
+#     assert logdir.exists
