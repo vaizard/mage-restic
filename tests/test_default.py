@@ -7,9 +7,7 @@ def test_files(host):
     present = [
         "/usr/local/bin/restic",
         "/etc/cron.d/restic-backblaze-example",
-        "/etc/cron.d/restic-s3-example",
-        "/var/lib/restic/passwd_backblaze-example",
-        "/var/lib/restic/passwd_s3-example"
+        "/etc/cron.d/restic-s3-example"
     ]
     if present:
         for file in present:
@@ -20,7 +18,6 @@ def test_files(host):
 
 def test_directories(host):
     present = [
-        "/var/lib/restic",
         "/var/log/restic"
     ]
     if present:

@@ -24,7 +24,6 @@
     group: 'root'
   with_items:
     - '{{ restic_install_path }}'
-    - '{{ restic_password_path }}'
     - '/var/log/restic'
     - '/etc/cron.d'
 
