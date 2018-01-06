@@ -24,7 +24,6 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | -------------- | ------------- | -----------------------------------|
 | `restic_version` | 0.8.1 | restic package version |
 | `restic_install_path` | "/usr/local/bin" | directory where restic binary will be installed |
-| `restic_password_path` | "/var/lib/restic" | directory where restic will hold password files |
 | `restic_repos` | [] | restic repositories and cron jobs configuration. More in [defaults/main.yml](defaults/main.yml) |
 
 ## Example
