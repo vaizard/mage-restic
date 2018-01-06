@@ -2,13 +2,15 @@
 - hosts: all
   any_errors_fatal: yes
   pre_tasks:
-  - name: Ensure cron.d exists
+  - name: Ensure cron.d exists in docker containers
     file:
       state: 'directory'
       path: '/etc/cron.d'
   roles:
     - ansible-restic
   vars:
+    restic_user: restic
+    restic_group: restic
     restic_repos:
       - name: s3-example
         url: "s3:s3.amazonaws.com/bucket_name/restic"
