@@ -1,13 +1,18 @@
 ---
 - hosts: all
   any_errors_fatal: yes
+  pre_tasks:
+  - name: Ensure cron.d exists
+    file:
+      state: 'directory'
+      path: '/etc/cron.d'
   roles:
     - ansible-restic
   vars:
     restic_repos:
       - name: s3-example
         url: "s3:s3.amazonaws.com/bucket_name/restic"
-        password: "dolphins"
+        password: "correcthorsebatterystaple"
         remote_credentials:
           aws_secret_key_id: "AWS_ACCESS_KEY_ID"
           aws_secret_access_key: "AWS_SECRET_ACCESS_KEY"
