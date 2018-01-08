@@ -1,14 +1,26 @@
 ---
-- name: Ensure restic directories exist
+- name: Ensure restic group is present
+  group:
+    name: "{{ restic_group }}"
+    system: yes
+
+- name: Ensure restic user is present
+  user:
+    name: "{{ restic_user }}"
+    group: "{{ restic_group }}"
+    shell: /bin/false
+    system: yes
+    createhome: false
+    state: present
+  when: restic_user != 'root'
+
+- name: Ensure restic installation directory exist
   file:
     state: 'directory'
-    path: '{{ item }}'
+    path: '{{ restic_install_path }}'
     mode: '0750'
-    owner: 'root'
-    group: 'root'
-  with_items:
-    - '{{ restic_install_path }}'
-    - '/var/log/restic'
+    owner: "root"
+    group: "root"
 
 - name: Download client binary
   become: no
@@ -32,4 +44,10 @@
     dest: '{{ restic_install_path }}/restic'
     mode: '0750'
     owner: 'root'
-    group: 'root'
+    group: '{{ restic_group }}'
+
+- name: Set proper capabilities for restic binary
+  capabilities:
+    path: '{{ restic_install_path }}/restic'
+    capability: cap_dac_read_search+ep
+    state: present

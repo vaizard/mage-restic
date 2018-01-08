@@ -1,6 +1,9 @@
 ---
 restic_version: '0.8.1'
 
+restic_user: root
+restic_group: root
+
 restic_install_path: '/usr/local/bin'
 
 restic_repos: []
