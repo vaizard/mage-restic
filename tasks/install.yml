@@ -18,9 +18,6 @@
   file:
     state: 'directory'
     path: '{{ restic_install_path }}'
-    mode: '0750'
-    owner: "root"
-    group: "root"
 
 - name: Download client binary
   become: no
