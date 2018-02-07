@@ -26,6 +26,7 @@
     dest: '/tmp'
   delegate_to: localhost
   run_once: true
+  check_mode: no
 
 - name: Decompress the binary
   become: no
@@ -34,6 +35,7 @@
     creates: "/tmp/restic"
   delegate_to: localhost
   run_once: true
+  check_mode: no
 
 - name: Propagate restic binary
   copy:
