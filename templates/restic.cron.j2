@@ -1,12 +1,13 @@
-#jinja2: lstrip_blocks: "True"
+# jinja2: lstrip_blocks: "True"
+# vi: ft=jinja.crontab
 # {{ ansible_managed }}
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:{{ restic_install_path }} 
-RESTIC_REPOSITORY="{{ item.url }}"
-RESTIC_PASSWORD="{{ item.password }}"
+RESTIC_REPOSITORY={{ item.url | trim | quote }}
+RESTIC_PASSWORD={{ item.password | trim | quote }}
 {% if item.remote_credentials is defined %}
 {% for k,v in item.remote_credentials.items() %}
-{{ k | upper }}={{ v }}
+{{ k | upper }}={{ v | trim | quote }}
 {% endfor %}
 {% endif %}
 
