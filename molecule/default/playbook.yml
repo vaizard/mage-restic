@@ -1,11 +1,7 @@
 ---
-- hosts: all
-  any_errors_fatal: yes
-  pre_tasks:
-  - name: Ensure cron.d exists in docker containers
-    file:
-      state: 'directory'
-      path: '/etc/cron.d'
+- name: Default use-case scenario
+  hosts: all
+  any_errors_fatal: true
   roles:
     - ansible-restic
   vars:

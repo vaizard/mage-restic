@@ -4,17 +4,17 @@ cache: pip
 services:
   - docker
 env:
-  - ANSIBLE=2.2.3
-  - ANSIBLE=2.3.2
-  - ANSIBLE=2.4.2
+  - ANSIBLE='ansible>=2.3.0,<2.4.0'
+  - ANSIBLE='ansible>=2.4.0,<2.5.0'
+  - ANSIBLE='ansible>=2.5.0,<2.6.0'
 install:
-  - pip install ansible==${ANSIBLE} ansible-lint>=3.4.15 molecule==1.25.0 docker git-semver testinfra>=1.7.0
+  - pip install ${ANSIBLE} 'ansible-lint>=3.4.15' 'molecule>=2.13.0' docker git-semver 'testinfra>=1.7.0'
 script:
   - molecule test
 deploy:
   provider: script
   skip_cleanup: true
-  script: ./.travis/generatetag.sh
+  script: ./.travis/releaser.sh
   on:
     branch: master
 branches:
