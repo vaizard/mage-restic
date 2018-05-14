@@ -1,5 +1,11 @@
 # Change Log
 
+## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
+
+**Implemented enhancements:**
+
+- allow specifying `latest` as version [\#19](https://github.com/paulfantom/ansible-restic/pull/19) ([paulfantom](https://github.com/paulfantom))
+
 ## [0.7.0](https://galaxy.ansible.com/paulfantom/restic) (2018-05-14)
 **Implemented enhancements:**
 
