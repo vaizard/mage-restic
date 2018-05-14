@@ -1,5 +1,5 @@
 ---
-restic_version: '0.8.1'
+restic_version: '0.8.3'
 
 restic_user: root
 restic_group: "{{ restic_user }}"
