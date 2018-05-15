@@ -14,16 +14,14 @@ def test_binary(host):
 
 def test_cronfiles(host):
     cronfiles = [
-        "/etc/cron.d/restic-backblaze-example",
-        "/etc/cron.d/restic-s3-example"
+        "/etc/cron.d/restic-local-example"
     ]
     for file in cronfiles:
         f = host.file(file)
         assert f.exists
         assert f.is_file
         assert f.mode == 0o640
-        with host.sudo():
-            assert f.contains('RESTIC_PASSWORD="correcthorsebatterystaple"')
+        # assert f.contains('RESTIC_PASSWORD="correcthorsebatterystaple"')
 #
 #
 # def test_logdir(host):

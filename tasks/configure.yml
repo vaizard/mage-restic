@@ -6,3 +6,15 @@
     mode: '0640'
   no_log: true
   with_items: '{{ restic_repos }}'
+  register: _cronfiles
+
+- name: Initialize restic repositories
+  command: "{{ restic_install_path }}/restic -r {{ item.url }} init"
+  environment:
+    RESTIC_PASSWORD: "{{ item.password }}"
+  no_log: true
+  ignore_errors: true
+  with_items: "{{ restic_repos }}"
+  when:
+    - _cronfiles is changed
+    - restic_initialize_repos

@@ -6,6 +6,8 @@ restic_group: "{{ restic_user }}"
 
 restic_install_path: '/usr/local/bin'
 
+restic_initialize_repos: true
+
 restic_repos: []
 # restic_repos:
 # - name: s3-example

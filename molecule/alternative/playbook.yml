@@ -8,6 +8,8 @@
     restic_version: 'latest'
     restic_user: restic
     restic_group: restic
+    restic_install_path: "/opt"
+    restic_initialize_repos: false
     restic_repos:
       - name: s3-example
         url: "s3:s3.amazonaws.com/bucket_name/restic"
