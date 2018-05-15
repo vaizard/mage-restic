@@ -1,10 +1,15 @@
 # Change Log
 
-## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
-
+## [0.8.0](https://galaxy.ansible.com/paulfantom/restic) (2018-05-15)
 **Implemented enhancements:**
 
 - allow specifying `latest` as version [\#19](https://github.com/paulfantom/ansible-restic/pull/19) ([paulfantom](https://github.com/paulfantom))
+- Checksum verification [\#18](https://github.com/paulfantom/ansible-restic/pull/18) ([paulfantom](https://github.com/paulfantom))
+
+**Merged pull requests:**
+
+- Sanitize variables in jinja template [\#20](https://github.com/paulfantom/ansible-restic/pull/20) ([paulfantom](https://github.com/paulfantom))
+- Repository initialization [\#10](https://github.com/paulfantom/ansible-restic/pull/10) ([paulfantom](https://github.com/paulfantom))
 
 ## [0.7.0](https://galaxy.ansible.com/paulfantom/restic) (2018-05-14)
 **Implemented enhancements:**
