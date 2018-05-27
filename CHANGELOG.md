@@ -1,5 +1,11 @@
 # Change Log
 
+## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
+
+**Merged pull requests:**
+
+- be very explicit about client binary name [\#22](https://github.com/paulfantom/ansible-restic/pull/22) ([kaleng](https://github.com/kaleng))
+
 ## [0.8.0](https://galaxy.ansible.com/paulfantom/restic) (2018-05-15)
 **Implemented enhancements:**
 
