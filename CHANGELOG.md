@@ -4,6 +4,7 @@
 
 **Merged pull requests:**
 
+- Minor fixes for installation and custom user handling [\#23](https://github.com/paulfantom/ansible-restic/pull/23) ([hadret](https://github.com/hadret))
 - be very explicit about client binary name [\#22](https://github.com/paulfantom/ansible-restic/pull/22) ([kaleng](https://github.com/kaleng))
 
 ## [0.8.0](https://galaxy.ansible.com/paulfantom/restic) (2018-05-15)
