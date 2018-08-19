@@ -1,9 +1,11 @@
-# Change Log 
+# Change Log
 
-## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
-
+## [0.9.0](https://galaxy.ansible.com/paulfantom/restic) (2018-08-19)
 **Merged pull requests:**
 
+- Bump default restic version to 0.9.2 [\#27](https://github.com/paulfantom/ansible-restic/pull/27) ([madddi](https://github.com/madddi))
+- Create a home directory for the restic user [\#26](https://github.com/paulfantom/ansible-restic/pull/26) ([madddi](https://github.com/madddi))
+- Optionally discard stdout of preconfigured cron jobs [\#25](https://github.com/paulfantom/ansible-restic/pull/25) ([madddi](https://github.com/madddi))
 - Minor fixes for installation and custom user handling [\#23](https://github.com/paulfantom/ansible-restic/pull/23) ([hadret](https://github.com/hadret))
 - be very explicit about client binary name [\#22](https://github.com/paulfantom/ansible-restic/pull/22) ([kaleng](https://github.com/kaleng))
 
