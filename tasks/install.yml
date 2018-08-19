@@ -10,7 +10,8 @@
     group: "{{ restic_group }}"
     shell: /bin/false
     system: true
-    createhome: false
+    createhome: true
+    home: "{{ restic_home }}"
     state: present
   when: restic_user != 'root'
 
