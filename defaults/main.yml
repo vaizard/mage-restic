@@ -8,6 +8,8 @@ restic_install_path: '/usr/local/bin'
 
 restic_initialize_repos: true
 
+restic_discard_cron_stdout: false
+
 restic_repos: []
 # restic_repos:
 # - name: s3-example

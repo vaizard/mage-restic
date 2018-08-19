@@ -20,11 +20,11 @@ RESTIC_PASSWORD={{ item.password | trim | quote }}
 {% if item.retention.weekly is defined %} --keep-weekly {{ item.retention.weekly }}{% endif -%}
 {% if item.retention.monthly is defined %} --keep-monthly {{ item.retention.monthly }}{% endif -%}
 {% if item.retention.yearly is defined %} --keep-yearly {{ item.retention.yearly }}{% endif -%}
-{% if item.retention.tags is defined %} --keep-tag {% for tag in item.retention.tags %}{{ tag }}{% if not loop.last %},{% endif %}{% endfor %}{% endif -%}
+{% if item.retention.tags is defined %} --keep-tag {% for tag in item.retention.tags %}{{ tag }}{% if not loop.last %},{% endif %}{% endfor %}{% endif -%}{% if restic_discard_cron_stdout %} > /dev/null{% endif %}
 ;{% endif %}
 {% if item.check | default(true) -%}
 # Check repository
-{{ item.check_time | default('17 4 * * *') }} {{ restic_user }} restic check
+{{ item.check_time | default('17 4 * * *') }} {{ restic_user }} restic check{% if restic_discard_cron_stdout %} > /dev/null{% endif %}
 {%- endif %}
 
 # Do an actual backup
