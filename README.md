@@ -22,7 +22,7 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 
 | Name           | Default Value | Description                        |
 | -------------- | ------------- | -----------------------------------|
-| `restic_version` | 0.8.3 | restic package version. Also accepts latest as parameter. |
+| `restic_version` | 0.9.2 | restic package version. Also accepts latest as parameter. |
 | `restic_user` | "root" | system user to run restic |
 | `restic_group` | "root" | system group to run restic |
 | `restic_install_path` | "/usr/local/bin" | directory where restic binary will be installed |
