@@ -4,6 +4,7 @@
 
 **Merged pull requests:**
 
+- fiexd aws aws\_access\_key\_id var name [\#32](https://github.com/paulfantom/ansible-restic/pull/32) ([cryptozero](https://github.com/cryptozero))
 - added architecture to temp restic executable file [\#30](https://github.com/paulfantom/ansible-restic/pull/30) ([cryptozero](https://github.com/cryptozero))
 - fix for TASK \[paulfantom.restic : Get checksum for 386 architecture\] [\#29](https://github.com/paulfantom/ansible-restic/pull/29) ([cryptozero](https://github.com/cryptozero))
 - bump default restic version to 0.9.2 [\#28](https://github.com/paulfantom/ansible-restic/pull/28) ([jkirk](https://github.com/jkirk))
