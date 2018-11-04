@@ -4,6 +4,7 @@
 
 **Merged pull requests:**
 
+- bump version only [\#33](https://github.com/paulfantom/ansible-restic/pull/33) ([killua-eu](https://github.com/killua-eu))
 - fiexd aws aws\_access\_key\_id var name [\#32](https://github.com/paulfantom/ansible-restic/pull/32) ([cryptozero](https://github.com/cryptozero))
 - added export to restic vars [\#31](https://github.com/paulfantom/ansible-restic/pull/31) ([cryptozero](https://github.com/cryptozero))
 - added architecture to temp restic executable file [\#30](https://github.com/paulfantom/ansible-restic/pull/30) ([cryptozero](https://github.com/cryptozero))
