@@ -4,6 +4,7 @@
 
 **Merged pull requests:**
 
+- Use comment filter for ansible\_managed. [\#35](https://github.com/paulfantom/ansible-restic/pull/35) ([SuperQ](https://github.com/SuperQ))
 - bump version only [\#33](https://github.com/paulfantom/ansible-restic/pull/33) ([killua-eu](https://github.com/killua-eu))
 - fiexd aws aws\_access\_key\_id var name [\#32](https://github.com/paulfantom/ansible-restic/pull/32) ([cryptozero](https://github.com/cryptozero))
 - added export to restic vars [\#31](https://github.com/paulfantom/ansible-restic/pull/31) ([cryptozero](https://github.com/cryptozero))
