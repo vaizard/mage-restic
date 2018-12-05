@@ -1,6 +1,6 @@
 # jinja2: lstrip_blocks: "True"
 # vi: ft=jinja.crontab
-# {{ ansible_managed }}
+{{ ansible_managed | comment }}
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:{{ restic_install_path }} 
 export RESTIC_REPOSITORY={{ item.url | trim | quote }}
