@@ -1,9 +1,9 @@
 # Change Log
 
-## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
-
+## [0.10.0](https://galaxy.ansible.com/paulfantom/restic) (2018-12-05)
 **Merged pull requests:**
 
+- port CI changes from cloudalchemy repositories [\#36](https://github.com/paulfantom/ansible-restic/pull/36) ([paulfantom](https://github.com/paulfantom))
 - Use comment filter for ansible\_managed. [\#35](https://github.com/paulfantom/ansible-restic/pull/35) ([SuperQ](https://github.com/SuperQ))
 - bump version only [\#33](https://github.com/paulfantom/ansible-restic/pull/33) ([killua-eu](https://github.com/killua-eu))
 - fiexd aws aws\_access\_key\_id var name [\#32](https://github.com/paulfantom/ansible-restic/pull/32) ([cryptozero](https://github.com/cryptozero))
