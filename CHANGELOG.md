@@ -1,5 +1,11 @@
 # Change Log
 
+## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
+
+**Merged pull requests:**
+
+- Add remote\_credentials to environment when initializing repositories [\#24](https://github.com/paulfantom/ansible-restic/pull/24) ([maloddon](https://github.com/maloddon))
+
 ## [0.10.0](https://galaxy.ansible.com/paulfantom/restic) (2018-12-05)
 **Merged pull requests:**
 
