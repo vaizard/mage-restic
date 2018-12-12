@@ -3,11 +3,11 @@
 {{ ansible_managed | comment }}
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:{{ restic_install_path }} 
-export RESTIC_REPOSITORY={{ item.url | trim | quote }}
-export RESTIC_PASSWORD={{ item.password | trim | quote }}
+RESTIC_REPOSITORY={{ item.url | trim | quote }}
+RESTIC_PASSWORD={{ item.password | trim | quote }}
 {% if item.remote_credentials is defined %}
 {% for k,v in item.remote_credentials.items() %}
-export {{ k | upper }}={{ v | trim | quote }}
+{{ k | upper }}={{ v | trim | quote }}
 {% endfor %}
 {% endif %}
 
