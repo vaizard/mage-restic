@@ -8,7 +8,7 @@
   user:
     name: "{{ restic_user }}"
     group: "{{ restic_group }}"
-    shell: /bin/false
+    shell: "{{ restic_shell }}"
     system: true
     createhome: true
     home: "{{ restic_home }}"

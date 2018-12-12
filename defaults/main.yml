@@ -3,6 +3,7 @@ restic_version: '0.9.3'
 
 restic_user: root
 restic_group: "{{ restic_user }}"
+restic_shell: "/bin/false"
 restic_home: "/var/lib/restic"
 
 restic_install_path: '/usr/local/bin'

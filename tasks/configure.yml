@@ -8,6 +8,16 @@
   with_items: '{{ restic_repos }}'
   register: _cronfiles
 
+- name: Deploy helper commands
+  template:
+    src: 'restic.helper.j2'
+    dest: "{{ restic_install_path }}/restic-{{ item.name }}"
+    owner: "{{ restic_user }}"
+    group: "{{ restic_group }}"
+    mode: '0750'
+  no_log: true
+  with_items: '{{ restic_repos }}'
+
 - name: Initialize restic repositories
   command: "{{ restic_install_path }}/restic -r {{ item.url }} init"
   environment: "{{ item.remote_credentials | d({}) | combine({'RESTIC_PASSWORD': item.password}) }}"

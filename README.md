@@ -25,12 +25,19 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `restic_version` | 0.9.2 | restic package version. Also accepts latest as parameter. |
 | `restic_user` | "root" | system user to run restic |
 | `restic_group` | "root" | system group to run restic |
+| `restic_shell` | "/bin/false" | the shell for the restic user, change this if you want to be able to su to it |
 | `restic_install_path` | "/usr/local/bin" | directory where restic binary will be installed |
 | `restic_repos` | [] | restic repositories and cron jobs configuration. More in [defaults/main.yml](defaults/main.yml) |
 
 ## Security
 
 To ensure high security this role can allow restic to be run as different user than root and still allowing read-only access to files. This is implemented by following [PR#1483](https://github.com/restic/restic/pull/1483) from restic repository.
+
+## Helpers
+
+This role also installs helper scripts to `restic_install_path`. These scripts are named after your repository and will ensure environment variables are correct for that repository.
+
+For example, if you have a restic repository named `testrepo`, you could use the `restic-testrepo` command, which will execute `restic` with the correct environment variables to manipulate that repository.
 
 ## Example
 
