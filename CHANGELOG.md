@@ -1,10 +1,10 @@
 # Change Log
 
-## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
-
+## [0.11.0](https://galaxy.ansible.com/paulfantom/restic) (2018-12-12)
 **Merged pull requests:**
 
-
+- Add helpers for easier backup restoring [\#37](https://github.com/paulfantom/ansible-restic/pull/37) ([TheLastProject](https://github.com/TheLastProject))
+- Removed export from template [\#34](https://github.com/paulfantom/ansible-restic/pull/34) ([ntimo](https://github.com/ntimo))
 - Add remote\_credentials to environment when initializing repositories [\#24](https://github.com/paulfantom/ansible-restic/pull/24) ([maloddon](https://github.com/maloddon))
 
 ## [0.10.0](https://galaxy.ansible.com/paulfantom/restic) (2018-12-05)
