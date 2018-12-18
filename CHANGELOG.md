@@ -2,6 +2,7 @@
 
 ## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
 
+
 **Merged pull requests:**
 
 - Allow controlling cron logging [\#38](https://github.com/paulfantom/ansible-restic/pull/38) ([TheLastProject](https://github.com/TheLastProject))
