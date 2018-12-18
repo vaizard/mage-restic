@@ -20,8 +20,7 @@
 
 - name: Initialize restic repositories
   command: "{{ restic_install_path }}/restic -r {{ item.url }} init"
-  environment: "{{ item.remote_credentials | d({}) | combine({'RESTIC_PASSWORD': item.password}) }}"
-  no_log: true
+  environment: "{{ item.remote_credentials | d({}) | combine({'RESTIC_PASSWORD': item.password | trim | quote}) }}"
   ignore_errors: true
   with_items: "{{ restic_repos }}"
   when:
