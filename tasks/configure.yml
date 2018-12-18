@@ -22,6 +22,7 @@
   command: "{{ restic_install_path }}/restic -r {{ item.url }} init"
   environment: "{{ item.remote_credentials | d({}) | combine({'RESTIC_PASSWORD': item.password | trim | quote}) }}"
   ignore_errors: true
+  no_log: true
   with_items: "{{ restic_repos }}"
   when:
     - _cronfiles is changed
