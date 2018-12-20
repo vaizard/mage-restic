@@ -1,5 +1,11 @@
 # Change Log
 
+## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
+
+**Merged pull requests:**
+
+- bump default restic version to 0.9.3 [\#41](https://github.com/paulfantom/ansible-restic/pull/41) ([jkirk](https://github.com/jkirk))
+
 ## [0.12.0](https://galaxy.ansible.com/paulfantom/restic) (2018-12-18)
 **Merged pull requests:**
 
