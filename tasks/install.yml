@@ -27,7 +27,9 @@
   with_items:
     - "{{ restic_cron_stdout_file }}"
     - "{{ restic_cron_stderr_file }}"
-  when: item != None
+  when:
+    - item != None
+    - item is not match("/dev/.*")
 
 - name: Ensure restic user can write to log files if defined
   file:
@@ -39,7 +41,9 @@
   with_items:
     - "{{ restic_cron_stdout_file }}"
     - "{{ restic_cron_stderr_file }}"
-  when: item != None
+  when:
+    - item != None
+    - item is not match("/dev/.*")
 
 - name: Download client binary
   become: false
