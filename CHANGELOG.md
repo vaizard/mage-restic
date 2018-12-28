@@ -1,9 +1,9 @@
 # Change Log
 
-## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
-
+## [0.12.1](https://galaxy.ansible.com/paulfantom/restic) (2018-12-28)
 **Merged pull requests:**
 
+- Don't try to chmod or chown files under /dev [\#43](https://github.com/paulfantom/ansible-restic/pull/43) ([madddi](https://github.com/madddi))
 - bump default restic version to 0.9.3 [\#41](https://github.com/paulfantom/ansible-restic/pull/41) ([jkirk](https://github.com/jkirk))
 
 ## [0.12.0](https://galaxy.ansible.com/paulfantom/restic) (2018-12-18)
