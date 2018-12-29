@@ -78,6 +78,12 @@
     state: present
   when: ansible_os_family | lower == "debian"
 
+- name: Install fuse (optional)
+  package:
+    name: "fuse"
+    state: present
+  when: restic_install_fuse
+
 - name: Set proper capabilities for restic binary
   capabilities:
     path: '{{ restic_install_path }}/restic'
