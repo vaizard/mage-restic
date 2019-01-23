@@ -1,5 +1,11 @@
 # Change Log
 
+## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
+
+**Merged pull requests:**
+
+- Use restic helper instead raw restic command to initialize repositories [\#45](https://github.com/paulfantom/ansible-restic/pull/45) ([kalos](https://github.com/kalos))
+
 ## [0.12.1](https://galaxy.ansible.com/paulfantom/restic) (2018-12-28)
 **Merged pull requests:**
 
