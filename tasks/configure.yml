@@ -18,6 +18,16 @@
   no_log: true
   with_items: '{{ restic_repos }}'
 
+- name: Whitelist restic to run certain commands with sudo
+  template:
+    src: 'restic.sudoers.j2'
+    dest: "/etc/sudoers.d/restic-sudoers"
+    owner: root
+    group: root
+    mode: '0440'
+    validate: "visudo -cf %s"
+  when: restic_user != 'root'
+
 - name: Initialize restic repositories
   command: "{{ restic_install_path }}/restic-{{ item.name }} init"
   ignore_errors: true

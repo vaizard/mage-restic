@@ -14,6 +14,11 @@ restic_cron_mailto: "{{ restic_user }}"
 restic_cron_stdout_file: null
 restic_cron_stderr_file: null
 
+restic_sudo_command_whitelist: []
+# restic_sudo_command_whitelist:
+#   - command: /usr/bin/some_backup_related_command_that_needs_sudo
+#     runas: root
+
 restic_repos: []
 # restic_repos:
 # - name: s3-example
