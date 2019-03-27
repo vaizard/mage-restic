@@ -73,9 +73,10 @@
     group: '{{ restic_group }}'
 
 - name: Install libcap on Debian systems
-  package:
+  apt:
     name: "libcap2-bin"
     state: present
+    update_cache: true
   when: ansible_os_family | lower == "debian"
 
 - name: Set proper capabilities for restic binary
