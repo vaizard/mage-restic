@@ -2,8 +2,16 @@
 
 ## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
 
+**Closed issues:**
+
+- "Deploy cron script" task treats “dest” as a directory instead of as a file and fails [\#46](https://github.com/paulfantom/ansible-restic/issues/46)
+
 **Merged pull requests:**
 
+- Better handling of libcap2 installation [\#51](https://github.com/paulfantom/ansible-restic/pull/51) ([paulfantom](https://github.com/paulfantom))
+- Add support for letting restic run certain commands with sudo [\#50](https://github.com/paulfantom/ansible-restic/pull/50) ([TheLastProject](https://github.com/TheLastProject))
+- bump default restic version to 0.9.4 [\#49](https://github.com/paulfantom/ansible-restic/pull/49) ([kalos](https://github.com/kalos))
+- more useful examples [\#48](https://github.com/paulfantom/ansible-restic/pull/48) ([kalos](https://github.com/kalos))
 - Use restic helper instead raw restic command to initialize repositories [\#45](https://github.com/paulfantom/ansible-restic/pull/45) ([kalos](https://github.com/kalos))
 
 ## [0.12.1](https://galaxy.ansible.com/paulfantom/restic) (2018-12-28)
@@ -23,7 +31,7 @@
 
 - Add helpers for easier backup restoring [\#37](https://github.com/paulfantom/ansible-restic/pull/37) ([TheLastProject](https://github.com/TheLastProject))
 - Removed export from template [\#34](https://github.com/paulfantom/ansible-restic/pull/34) ([ntimo](https://github.com/ntimo))
-- Add remote\_credentials to environment when initializing repositories [\#24](https://github.com/paulfantom/ansible-restic/pull/24) ([maloddon](https://github.com/maloddon))
+- Add remote\_credentials to environment when initializing repositories [\#24](https://github.com/paulfantom/ansible-restic/pull/24) ([alo-is](https://github.com/alo-is))
 
 ## [0.10.0](https://galaxy.ansible.com/paulfantom/restic) (2018-12-05)
 **Merged pull requests:**
