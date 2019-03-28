@@ -77,11 +77,15 @@
     name: "libcap2-bin"
     state: present
     update_cache: true
-  when: ansible_os_family | lower == "debian"
+  when:
+    - ansible_os_family | lower == "debian"
+    - restic_user != 'root'
 
 - name: Set proper capabilities for restic binary
   capabilities:
     path: '{{ restic_install_path }}/restic'
     capability: cap_dac_read_search+ep
     state: present
-  when: not ansible_check_mode
+  when:
+    - restic_user != 'root'
+    - not ansible_check_mode
