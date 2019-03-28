@@ -8,6 +8,7 @@
 
 **Merged pull requests:**
 
+- do not set binary capabilities when restic user is root [\#54](https://github.com/paulfantom/ansible-restic/pull/54) ([paulfantom](https://github.com/paulfantom))
 - Better handling of libcap2 installation [\#51](https://github.com/paulfantom/ansible-restic/pull/51) ([paulfantom](https://github.com/paulfantom))
 - Add support for letting restic run certain commands with sudo [\#50](https://github.com/paulfantom/ansible-restic/pull/50) ([TheLastProject](https://github.com/TheLastProject))
 - bump default restic version to 0.9.4 [\#49](https://github.com/paulfantom/ansible-restic/pull/49) ([kalos](https://github.com/kalos))
