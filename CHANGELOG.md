@@ -1,5 +1,11 @@
 # Change Log
 
+## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
+
+**Merged pull requests:**
+
+- Delegate run\_once to localhost [\#55](https://github.com/paulfantom/ansible-restic/pull/55) ([TheLastProject](https://github.com/TheLastProject))
+
 ## [0.13.0](https://galaxy.ansible.com/paulfantom/restic) (2019-03-28)
 **Closed issues:**
 
