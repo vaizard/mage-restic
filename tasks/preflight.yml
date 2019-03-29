@@ -23,6 +23,7 @@
   set_fact:
     _checksums: "{{ lookup('url', 'https://github.com/restic/restic/releases/download/v' + restic_version + '/SHA256SUMS', wantlist=True) | list }}"
   run_once: true
+  delegate_to: localhost
 
 - name: "Get checksum for {{ go_arch }} architecture"
   set_fact:
