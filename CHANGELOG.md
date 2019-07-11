@@ -1,13 +1,13 @@
 # Change Log
 
-## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
-
+## [0.14.0](https://galaxy.ansible.com/paulfantom/restic) (2019-07-11)
 **Fixed bugs:**
 
 - Repository initialization missing environment variables [\#21](https://github.com/paulfantom/ansible-restic/issues/21)
 
 **Merged pull requests:**
 
+- Remove all run\_once [\#59](https://github.com/paulfantom/ansible-restic/pull/59) ([TheLastProject](https://github.com/TheLastProject))
 - 0.9.5 has been out for a while [\#58](https://github.com/paulfantom/ansible-restic/pull/58) ([TheLastProject](https://github.com/TheLastProject))
 - Delegate run\_once to localhost [\#55](https://github.com/paulfantom/ansible-restic/pull/55) ([TheLastProject](https://github.com/TheLastProject))
 
