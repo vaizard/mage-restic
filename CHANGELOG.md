@@ -1,5 +1,11 @@
 # Change Log
 
+## [**Next release**](https://galaxy.ansible.com/paulfantom/restic)
+
+**Merged pull requests:**
+
+- only init repo when it does not already exist [\#61](https://github.com/paulfantom/ansible-restic/pull/61) ([d-matt](https://github.com/d-matt))
+
 ## [0.14.0](https://galaxy.ansible.com/paulfantom/restic) (2019-07-11)
 **Fixed bugs:**
 
