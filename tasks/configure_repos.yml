@@ -5,8 +5,6 @@
     dest: '/etc/cron.d/restic-{{ item.name }}'
     mode: '0640'
   no_log: true
-  with_items: '{{ restic_repos }}'
-  register: _cronfiles
 
 - name: Deploy helper commands
   template:
@@ -16,23 +14,21 @@
     group: "{{ restic_group }}"
     mode: '0750'
   no_log: true
-  with_items: '{{ restic_repos }}'
 
-- name: Whitelist restic to run certain commands with sudo
-  template:
-    src: 'restic.sudoers.j2'
-    dest: "/etc/sudoers.d/restic-sudoers"
-    owner: root
-    group: root
-    mode: '0440'
-    validate: "visudo -cf %s"
-  when: restic_user != 'root'
+- name: Check if repo is already initialized
+  command: restic -r {{ item.url | trim | quote }} snapshots
+  environment:
+    RESTIC_PASSWORD: "{{ item.password | trim | quote }}"
+  changed_when: false
+  failed_when: false
+  check_mode: false
+  no_log: true
+  register: repo
 
 - name: Initialize restic repositories
   command: "{{ restic_install_path }}/restic-{{ item.name }} init"
   ignore_errors: true
   no_log: true
-  with_items: "{{ restic_repos }}"
   when:
-    - _cronfiles is changed
+    - repo.rc != 0
     - restic_initialize_repos
