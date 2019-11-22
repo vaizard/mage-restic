@@ -19,12 +19,17 @@
   when: restic_version == "latest"
 
 - name: Get checksum list from github
-  set_fact:
-    _checksums: "{{ lookup('url', 'https://github.com/restic/restic/releases/download/v' + restic_version + '/SHA256SUMS', wantlist=True) | list }}"
-  delegate_to: localhost
+  get_url:
+      url: 'https://github.com/restic/restic/releases/download/v{{ restic_version }}/SHA256SUMS'
+      dest: /tmp/restic-{{ restic_version }}-SHA256SUMS
+
+- name: Set checksum variable
+  slurp: 
+      src: "/tmp/restic-{{ restic_version }}-SHA256SUMS"
+  register: _checksums
 
 - name: "Get checksum for {{ go_arch }} architecture"
   set_fact:
     restic_checksum: "{{ item.split(' ')[0] }}"
-  with_items: "{{ _checksums }}"
+  with_items: "{{ (_checksums.content | b64decode).split('\n') }}"
   when: "('restic_' + restic_version + '_linux_' + go_arch + '.bz2') in item"
