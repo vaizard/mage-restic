@@ -7,6 +7,11 @@
 [![Ansible Role](https://img.shields.io/badge/ansible%20role-paulfantom.restic-blue.svg)](https://galaxy.ansible.com/paulfantom/restic/)
 [![GitHub tag](https://img.shields.io/github/tag/paulfantom/ansible-restic.svg)](https://github.com/paulfantom/ansible-restic/tags)
 
+## IMPORTANT
+
+Maintainers needed!
+I am no longer using this project anywhere and I don't have any drive towards maintaing it anymore. If you are interested in maintaining this project, write me an email on paulfantom@gmail.com.
+
 ## Description
 
 Deploy [restic](https://restic.net/) - fast, secure, efficient backup program.
