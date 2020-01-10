@@ -1,5 +1,5 @@
 ---
-restic_version: '0.9.3'
+restic_version: '0.9.5'
 
 restic_user: root
 restic_group: "{{ restic_user }}"
@@ -14,6 +14,11 @@ restic_initialize_repos: true
 restic_cron_mailto: "{{ restic_user }}"
 restic_cron_stdout_file: null
 restic_cron_stderr_file: null
+
+restic_sudo_command_whitelist: []
+# restic_sudo_command_whitelist:
+#   - command: /usr/bin/some_backup_related_command_that_needs_sudo
+#     runas: root
 
 restic_repos: []
 # restic_repos:
@@ -48,3 +53,10 @@ restic_repos: []
 #     - command: 'restic backup /home'
 #       at: '0 3  * * *'
 #       user: 'restic'
+# - name: mybackupserver
+#   url: "rest:http://mybackupserver:8888/{{inventory_hostname}}" # useful to create one repo per host
+#   password: "{{ lookup('password', inventory_dir + '/restic_pass/' + inventory_hostname + ' length=22') }}" # to create passfile per host
+#   jobs:
+#     - command: "openvpn -c /etc/myvpn.ovpn && ionice -c2 -n7 nice -n5 restic backup /home && curl -fsS --retry 4 https://hc-ping.com/XXXXXX-.." # adjusted niceness I/O priority and use pre and post command
+#       at: "{{ 60 |random(seed=inventory_hostname) }} 4  * * *" # use random minutes based on inventory hostname
+#   check: false # don't check repository from client. Instead, you can check directly from the server.

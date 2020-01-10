@@ -22,7 +22,7 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 
 | Name           | Default Value | Description                        |
 | -------------- | ------------- | -----------------------------------|
-| `restic_version` | 0.9.3 | restic package version. Also accepts latest as parameter. |
+| `restic_version` | 0.9.5 | restic package version. Also accepts latest as parameter. |
 | `restic_user` | "root" | system user to run restic |
 | `restic_group` | "root" | system group to run restic |
 | `restic_shell` | "/bin/false" | the shell for the restic user, change this if you want to be able to su to it |
@@ -30,11 +30,21 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `restic_cron_mailto` | restic_user | who to mail results of the restic crons to, set to "" to not mail |
 | `restic_cron_stdout_file` | null | what file to log restic output to, null means include in mailto, use /dev/null to discard |
 | `restic_cron_stderr_file` | null | what file to log restic errors to, null means include in mailto, use /dev/null to discard |
+| `restic_sudo_command_whitelist` | [] | whitelist of commands restic is allowed to run with sudo |
 | `restic_repos` | [] | restic repositories and cron jobs configuration. More in [defaults/main.yml](defaults/main.yml) |
 
 ## Security
 
 To ensure high security this role can allow restic to be run as different user than root and still allowing read-only access to files. This is implemented by following [PR#1483](https://github.com/restic/restic/pull/1483) from restic repository.
+
+If you need to run certain tools as another user, make sure to list those in `restic_sudo_command_whitelist` as follows:
+```yaml
+restic_sudo_command_whitelist:
+   - command: /usr/bin/some_backup_related_command_that_needs_sudo
+     runas: root
+```
+
+Then, in your actual backup command, add the command as `sudo -u root /usr/bin/some_backup_related_command_that_needs_sudo`.
 
 ## Helpers
 
@@ -49,7 +59,6 @@ For example, if you have a restic repository named `testrepo`, you could use the
 Use it in a playbook as follows:
 ```yaml
 - hosts: all
-  become: yes
   roles:
     - paulfantom.restic
 ```

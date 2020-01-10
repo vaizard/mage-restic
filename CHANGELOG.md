@@ -4,6 +4,37 @@
 
 **Merged pull requests:**
 
+- Changed checksum checking process [\#60](https://github.com/paulfantom/ansible-restic/pull/60) ([rez0n](https://github.com/rez0n))
+
+## [0.15.0](https://galaxy.ansible.com/paulfantom/restic) (2019-11-22)
+**Merged pull requests:**
+
+- only init repo when it does not already exist [\#61](https://github.com/paulfantom/ansible-restic/pull/61) ([d-matt](https://github.com/d-matt))
+
+## [0.14.0](https://galaxy.ansible.com/paulfantom/restic) (2019-07-11)
+**Fixed bugs:**
+
+- Repository initialization missing environment variables [\#21](https://github.com/paulfantom/ansible-restic/issues/21)
+
+**Merged pull requests:**
+
+- Remove all run\_once [\#59](https://github.com/paulfantom/ansible-restic/pull/59) ([TheLastProject](https://github.com/TheLastProject))
+- 0.9.5 has been out for a while [\#58](https://github.com/paulfantom/ansible-restic/pull/58) ([TheLastProject](https://github.com/TheLastProject))
+- Delegate run\_once to localhost [\#55](https://github.com/paulfantom/ansible-restic/pull/55) ([TheLastProject](https://github.com/TheLastProject))
+
+## [0.13.0](https://galaxy.ansible.com/paulfantom/restic) (2019-03-28)
+**Closed issues:**
+
+- "Deploy cron script" task treats “dest” as a directory instead of as a file and fails [\#46](https://github.com/paulfantom/ansible-restic/issues/46)
+
+**Merged pull requests:**
+
+- do not set binary capabilities when restic user is root [\#54](https://github.com/paulfantom/ansible-restic/pull/54) ([paulfantom](https://github.com/paulfantom))
+- Propagate changes from cloudalchemy roles [\#52](https://github.com/paulfantom/ansible-restic/pull/52) ([paulfantom](https://github.com/paulfantom))
+- Better handling of libcap2 installation [\#51](https://github.com/paulfantom/ansible-restic/pull/51) ([paulfantom](https://github.com/paulfantom))
+- Add support for letting restic run certain commands with sudo [\#50](https://github.com/paulfantom/ansible-restic/pull/50) ([TheLastProject](https://github.com/TheLastProject))
+- bump default restic version to 0.9.4 [\#49](https://github.com/paulfantom/ansible-restic/pull/49) ([kalos](https://github.com/kalos))
+- more useful examples [\#48](https://github.com/paulfantom/ansible-restic/pull/48) ([kalos](https://github.com/kalos))
 - Use restic helper instead raw restic command to initialize repositories [\#45](https://github.com/paulfantom/ansible-restic/pull/45) ([kalos](https://github.com/kalos))
 
 ## [0.12.1](https://galaxy.ansible.com/paulfantom/restic) (2018-12-28)
@@ -23,7 +54,7 @@
 
 - Add helpers for easier backup restoring [\#37](https://github.com/paulfantom/ansible-restic/pull/37) ([TheLastProject](https://github.com/TheLastProject))
 - Removed export from template [\#34](https://github.com/paulfantom/ansible-restic/pull/34) ([ntimo](https://github.com/ntimo))
-- Add remote\_credentials to environment when initializing repositories [\#24](https://github.com/paulfantom/ansible-restic/pull/24) ([maloddon](https://github.com/maloddon))
+- Add remote\_credentials to environment when initializing repositories [\#24](https://github.com/paulfantom/ansible-restic/pull/24) ([alo-is](https://github.com/alo-is))
 
 ## [0.10.0](https://galaxy.ansible.com/paulfantom/restic) (2018-12-05)
 **Merged pull requests:**

@@ -1,0 +1,4 @@
+{{ ansible_managed | comment }}
+{% for item in restic_sudo_command_whitelist %}
+{{ restic_user }} ALL = ({{ item.runas | default('ALL') }}) NOPASSWD: {{ item.command }}
+{% endfor %}
